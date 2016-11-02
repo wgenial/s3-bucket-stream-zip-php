@@ -23,3 +23,15 @@ $stream = new S3BucketStreamZip(
           );
 
 $stream->send('name-of-zipfile-to-send.zip');
+
+$stream->sendFiles('name-of-zipfile-to-send-2.zip', array(
+  'files' => array(
+    array(
+      'key' => 'filename1.jpg',
+    },
+    array(
+      'key' => 'filename2.jpg',
+      'name' => 'image2.jpg'
+    },
+  )
+);
